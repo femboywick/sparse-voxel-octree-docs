@@ -1,7 +1,8 @@
 ## the github issue that started it all
-in my initial search for how to do 3D navigation in godot, i found [this](https://github.com/godotengine/godot-proposals/issues/7504) issue. in it, @smix8 pointed out reference 1.  from the chapter, i found a few papers, which eventually lead onto a myriad of other papers. the ones ive mainly been referencing whilst writing my code are listed below
+in my initial search for how to do 3D navigation in godot, i found [this](https://github.com/godotengine/godot-proposals/issues/7504) issue. in it, @smix8 pointed out reference 1.  from the chapter, i found a few papers, which eventually lead onto a myriad of other papers. the ones I've mainly been referencing whilst writing my code are listed below
 
-TODO: list all papers
+TODO:
+- [ ] list all papers
 
 ## papers
 ### reference 1 ^gameaipro

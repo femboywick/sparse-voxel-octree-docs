@@ -15,7 +15,7 @@ the `new()` function takes in:
 	- this implementation is [out of core](https://en.wikipedia.org/wiki/External_memory_algorithm) as per [[sources#^ooc-svo-construction|reference 2]]. please note that *out of core* does not necessarily mean *multi-threaded*.
 	- as part of [[#`SvoPartitioner`]]
 
-once a `SvoConstructor` has been created with `new()`, `build()` can be called on it to output a final `SvoIntermediary`.
+once a `SvoConstructor` has been created, `build()` can be called on it to output a final `SvoIntermediary`.
 
 below features a simple example for calling the constructor
 ```rust
@@ -25,7 +25,7 @@ let triangles = get_triangles()
 
 let constructor = SvoConstructor::new(layers, memory_limit, triangles);
 
-constructor.build() // returns an SvoIntermediary
+constructor.build() // returns an SvoIntermediary, and sonsumes constructor
 ```
 ---
 ## storage of SVOs
@@ -38,8 +38,12 @@ pub struct SvoIntermediary {
     pub current_indices: Vec<usize>, // this is solely to keep track of the amount of nodes.
 }
 ```
+
 `layers` is a list of layers, with each layer being a list of nodes. these are stored in [[10 morton coding|morton order]].
 each node is an [[#`SvoNodeIntermediary`]].
+#### creating and using your own `SvoIntermediary`
+to create an SVO,
+
 ### `SvoNodeIntermediary`
 ### `SvoLink`
 ---

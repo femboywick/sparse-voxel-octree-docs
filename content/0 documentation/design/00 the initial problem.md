@@ -32,9 +32,8 @@ the agent should be able to navigate through space around obstacles. this means 
 there should not have to be a ground for the enemy to be relative to, as in a navmesh.
 ### specific
 #### voxelization
-typically, [[02 constructing an SVO part 1 - voxelization#input|triangle meshes]] are used for rendered geometry. collision meshes, which work faster with convex shapes, can be made from many simple convex representations of a potentially concave whole.
-a voxel representation needs to be made from the input geometry. this resulting voxel grid will then be navigated through. see [[02 constructing an SVO part 1 - voxelization]]
-
+typically, [[02 constructing an SVO part 1 - voxelization#input|triangle meshes]] are used for rendered geometry. trying to path-find with a complex mesh, such as a scene, is very difficult. instead we shall turn to *voxels*. think of the process as turning the continuous triangle mesh, where any vertex could be anywhere in space, to a discrete voxel grid, where each voxel has a consistent placing.
+a voxel representation needs to be made from the input geometry. this resulting voxel grid will then be navigated through. 
 #### path-finding should be optimal in relation to the world
 whatever method is used to generate the voxelization of the scene (see [[methods of representing obstacles in 3D]]), the final path should be optimal relative to the world. 
 this means that if a voxel octree, like in this crate, is used to represent traverse-able space, the path output will be relative to the octree. see [[01 sparse voxel octrees - an introduction#sub-optimal pathing|sub-optimal pathing]] for a more detailed explanation
