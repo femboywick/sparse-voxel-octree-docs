@@ -1,0 +1,4 @@
+---
+tags:
+  - diataxis/reference
+---
