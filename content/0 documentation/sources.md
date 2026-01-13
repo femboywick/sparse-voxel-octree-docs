@@ -3,6 +3,7 @@ in my initial search for how to do 3D navigation in godot, i found [this](https:
 
 TODO:
 - [ ] list all papers
+- [ ] check if the massonnat papers are correctly dated
 
 ## papers
 ### reference 1 ^gameaipro
@@ -10,12 +11,12 @@ TODO:
 - chapter in game ai pro 3
 ### reference 2 ^ooc-svo-construction
 [Out-of-Core Construction of Sparse Voxel Octrees](https://graphics.cs.kuleuven.be/publications/BLD14OCCSVO/BLD14OCCSVO_paper.pdf) (2014) - J. Baert, A. Lagae and Ph. Dutré
-- see [[#source code]]
+- see [[#source code]] ^ooc-svo-construction-src
 ### reference 3 ^efficient-svos
 [Efficient Sparse Voxel Octrees – Analysis, Extensions, and Implementation](https://research.nvidia.com/sites/default/files/pubs/2010-02_Efficient-Sparse-Voxel/laine2010tr1_paper.pdf) (2010) - S. Laine, T. Karras
 ### reference 4 ^efficient-pathfinding
 [Efficient Octree-based 3D Pathfinding](https://www.sable.mcgill.ca/~clump/papers/massonnat-24-efficient.pdf) (2024) - Q. Massonnat, C. Verbrugge
-#### reference 4, part two
+#### reference 4, thesis ^efficient-pathfinding-thesis
 [Efficient Octree-based 3D Pathfinding (thesis)](https://escholarship.mcgill.ca/downloads/xw42nf656?locale=en) (2023) - Q. Massonnat
 
 ## source code

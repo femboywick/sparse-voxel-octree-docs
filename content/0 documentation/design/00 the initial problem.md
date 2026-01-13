@@ -32,8 +32,9 @@ the agent should be able to navigate through space around obstacles. this means 
 there should not have to be a ground for the enemy to be relative to, as in a navmesh.
 ### specific
 #### voxelization
-typically, [[02 constructing an SVO part 1 - voxelization#input|triangle meshes]] are used for rendered geometry. trying to path-find with a complex mesh, such as a scene, is very difficult. instead we shall turn to *voxels*. think of the process as turning the continuous triangle mesh, where any vertex could be anywhere in space, to a discrete voxel grid, where each voxel has a consistent placing.
-a voxel representation needs to be made from the input geometry. this resulting voxel grid will then be navigated through. 
+typically, [[02 constructing an SVO part 1 - partitioning, voxelization and building#input|triangle meshes]] are used for rendered geometry. trying to path-find with a complex mesh, such as a scene, is very difficult. instead we shall turn to *voxels*.
+you can think of the process as turning the *continuous* triangle mesh, where a vertex, edge or face could be anywhere in space, to a *discrete* voxel grid, where each voxel has a consistent placement.
+a voxel representation needs to be made from the input geometry. this resulting voxel representation will then be navigated through. 
 #### path-finding should be optimal in relation to the world
 whatever method is used to generate the voxelization of the scene (see [[methods of representing obstacles in 3D]]), the final path should be optimal relative to the world. 
 this means that if a voxel octree, like in this crate, is used to represent traverse-able space, the path output will be relative to the octree. see [[01 sparse voxel octrees - an introduction#sub-optimal pathing|sub-optimal pathing]] for a more detailed explanation
@@ -50,4 +51,4 @@ see [[01 sparse voxel octrees - an introduction|sparse voxel octrees]]
 ## producing a solution
 the final goal is to be able to navigate through 3D space, whilst avoiding obstacles in the way. 
 
-to achieve this, we'll employ a [[01 sparse voxel octrees - an introduction|sparse voxel octree]], first [[02 constructing an SVO part 1 - voxelization|generating a surface voxelization]], then [[flood filling to find the valid explore-able air voxels]]. once this is created, it can be stored and serialised for future use, as the current implementation is single-core, therefore slow. afterwards, the sparse voxel octree can be navigated through, to find an optimal path ([[01 sparse voxel octrees - an introduction#sub-optimal pathing|relative to the octree]]). then, we can optimise our path-finding algorithm, to find a more optimal path relative to world space.
+to achieve this, we'll employ a [[01 sparse voxel octrees - an introduction|sparse voxel octree]], first [[02 constructing an SVO part 1 - partitioning, voxelization and building|generating a surface voxelization]], then [[flood filling to find the valid explore-able air voxels]]. once this is created, it can be stored and serialised for future use, as the current implementation is single-core, therefore slow. afterwards, the sparse voxel octree can be navigated through, to find an optimal path ([[01 sparse voxel octrees - an introduction#sub-optimal pathing|relative to the octree]]). then, we can optimise our path-finding algorithm, to find a more optimal path relative to world space.

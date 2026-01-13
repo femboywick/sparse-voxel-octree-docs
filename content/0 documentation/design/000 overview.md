@@ -14,8 +14,8 @@ this section is mainly concerned with [[01 sparse voxel octrees - an introductio
 ## [[01 sparse voxel octrees - an introduction]]
 ![[01 sparse voxel octrees - an introduction#^description]]
 
-## [[02 constructing an SVO part 1 - voxelization]]
-![[02 constructing an SVO part 1 - voxelization#^description]]
+## [[02 constructing an SVO part 1 - partitioning, voxelization and building]]
+![[02 constructing an SVO part 1 - partitioning, voxelization and building#^description]]
 
 ## [[03 constructing an SVO part 2 - flood-fill]]
 
@@ -25,3 +25,6 @@ this section is mainly concerned with [[01 sparse voxel octrees - an introductio
 the next section of this chapter has some further information about some inner workings.
 ## [[10 morton coding]]
 ![[10 morton coding#^description]]
+
+---
+finally, we provide a basic set of tutorials for creating your own SVO.
