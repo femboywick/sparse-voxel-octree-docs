@@ -6,7 +6,7 @@ the `SvoIntermediary` type is (currently) the main type involved in storing a sp
 
 ## the basic constructor: `SvoConstructor`
 
-to construct a SVO using rust, you will use a `SvoConstructor`. this struct is responsible for storing the basic information about the SVO, and using it to construct a surface voxelization of the input mesh.
+to construct a SVO using the rust library, you will use a `SvoConstructor`. this struct is responsible for storing the basic information about the SVO, and using it to construct a surface voxelization of the input mesh.
 
 the `new()` function takes in:
 - a `Vec` of [[libraries used#parry3d|parry3d]] `Triangle`s
