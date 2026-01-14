@@ -2,7 +2,7 @@
 tags:
   - diataxis/background
 ---
-The goal of this library is to navigate in a [[00 the Initial Problem#full 3D navigation|fully 3D way]], around obstacles and without requiring a floor like a navmesh does. It presents a sparse voxel octree, where a leaf node describes traverse-able space.
+The goal of this library is to navigate in a [[01 the Initial Problem#full 3D navigation|fully 3D way]], around obstacles and without requiring a floor like a navmesh does. It presents a sparse voxel octree, where a leaf node describes traverse-able space.
 
 ---
 ## Glossary

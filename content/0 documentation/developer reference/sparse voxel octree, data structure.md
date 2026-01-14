@@ -9,10 +9,10 @@ The `SvoIntermediary` type is (currently) the main type involved in storing a sp
 To construct an SVO using the rust library, you will use a `SvoConstructor`. This struct is responsible for storing the basic information about the SVO, and using it to construct a surface voxelization of the input mesh.
 
 the `new()` function takes in:
-- a `Vec` of [[libraries used#parry3d|parry3d]] `Triangle`s
+- a `Vec` of [[21 Libraries Used#parry3d|parry3d]] `Triangle`s
 - An amount of layers to generate (final resolution is calculated by $2*2^{layers}$)
 - A memory limit (measured in megabytes)
-	- This implementation is [out of core](https://en.wikipedia.org/wiki/External_memory_algorithm) as per [[Sources#^ooc-svo-construction|reference 2]]. Please note that *out of core* does not necessarily mean *multi-threaded*.
+	- This implementation is [out of core](https://en.wikipedia.org/wiki/External_memory_algorithm) as per [[20 Sources#^ooc-svo-construction|reference 2]]. Please note that *out of core* does not necessarily mean *multi-threaded*.
 	- As part of [[#`SvoPartitioner`]], the voxel grid is split up into powers of 8.
 
 Once a `SvoConstructor` has been created, `build()` can be called on it to output a final `SvoIntermediary`.
@@ -40,7 +40,7 @@ constructor.build() // returns an SvoIntermediary, and consumes constructor
 > }
 > ```
 
-`layers` is a list of layers, with each layer being a list of nodes. These are stored in [[10 morton coding|morton order]].
+`layers` is a list of layers, with each layer being a list of nodes. These are stored in [[10 Morton Coding|Morton order]].
 Each node is an [[#`SvoNodeIntermediary`]]. 
 
 ### `SvoNodeIntermediary`
@@ -53,7 +53,7 @@ Each node is an [[#`SvoNodeIntermediary`]].
 >}
 >```
 
-As specified in [[01 Sparse Voxel Octrees - an Introduction#Node Storage|the node storage section]], for every node within the tree we shall store the position, first child, and a bit-mask. Whether the node is a leaf or not is determined from the `children_offsets`. Below is an example of the construction and storage of a node, from `SvoBuilder`.
+As specified in [[02 Sparse Voxel Octrees - an Introduction#Node Storage|the node storage section]], for every node within the tree we shall store the position, first child, and a bit-mask. Whether the node is a leaf or not is determined from the `children_offsets`. Below is an example of the construction and storage of a node, from `SvoBuilder`.
 ```rust
 let node = SvoNodeIntermediary::leaf(position);
 
@@ -90,7 +90,7 @@ if node.is_leaf() {
 > }
 > ```
 
-The `child_mask` stored is an 8-bit mask. For the theory, see [[01 Sparse Voxel Octrees - an Introduction#^8bit|this section of an article in design]]. In practise, we store each child as a bit in the mask. When there are no children (IE, a leaf node), the mask is 0. For convenience, an `is_leaf()` function is provided that checks this. A function for this is also included in `SvoNodeIntermediary`. 
+The `child_mask` stored is an 8-bit mask. For the theory, see [[02 Sparse Voxel Octrees - an Introduction#^8bit|this section of an article in design]]. In practise, we store each child as a bit in the mask. When there are no children (IE, a leaf node), the mask is 0. For convenience, an `is_leaf()` function is provided that checks this. A function for this is also included in `SvoNodeIntermediary`. 
 
 Also included are a few functions that will get children of the a node, given its `first_child`. These then return an `SvoLink`, or a `Vec` of them.
 
