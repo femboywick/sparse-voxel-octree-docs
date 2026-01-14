@@ -7,7 +7,7 @@ This article serves as an introduction to sparse voxel octrees, the main data st
 ### Why Voxels?
 in a navmesh, all the tiles are convex. This makes it quite convenient to path-find through, as:
 > Two points in the same \[convex\] tile can always be connected by a straight line that does not intersect any obstacles
-> [[sources#^efficient-pathfinding-thesis|ref. 4 thesis: page 16]]
+> [[Sources#^efficient-pathfinding-thesis|ref. 4 thesis: page 16]]
 ## Voxel Grids Vs Octrees
 ### Whats a Voxel Grid?
 A voxel grid is a 3D grid, where each space is occupied by a filled or empty voxel. This can be seen on the left of figure 1, where the red cells are full voxels, and everything else is empty. 
@@ -20,7 +20,7 @@ The initial approach one might take to storing this voxel grid is to store all t
 A voxel octree is an optimised representation of voxels in a region of space. 
 The main premise of an octree is that large empty sections of space can be represented using a single voxel at best rather than many voxels of the same size. As seen in figure 1, a large region of empty space at the top right is stored using a single voxel in the octree (right), and many voxels in the voxel grid (left).
 
-See the [[sources#^gameaipro|game AI pro 3 chapter by Daniel Brewer]] for a brief overview of sparse voxel octrees, their construction, and path-finding through them.
+See the [[Sources#^gameaipro|game AI pro 3 chapter by Daniel Brewer]] for a brief overview of sparse voxel octrees, their construction, and path-finding through them.
 ## A Brief Overview
 ### What Is a Voxel Octree?
 A voxel octree is a [tree](https://en.wikipedia.org/wiki/Tree_(abstract_data_type)), with each node either containing 8 children (hence **oct**-tree), or no children at all. 
@@ -45,9 +45,9 @@ For our representation of a node, we must store two things:
 - position
 - children
 
-Mainly for convenience, we store the position of each node within the SVO. it is possible to store this either as a 64-bit [[10 morton coding|morton code]] [^morton], or a vector.
+Mainly for convenience, we store the position of each node within the SVO. it is possible to store this either as a 64-bit [[10 morton coding|Morton code]][^morton], or a vector.
 
-[^morton]: With a 64-bit morton code, 63 bits are actually used, with 21 bits allocated per coordinate.
+[^morton]: With a 64-bit Morton code, 63 bits are actually used, with 21 bits allocated per coordinate.
 
 From a node, we must be able to access all of its children. A first approach might be to store a reference to every single child.
 
@@ -62,9 +62,9 @@ From a node, we must be able to access all of its children. A first approach mig
 Regardless of if an octree is sparse or not, we can make a simple optimisation. Instead of storing a link to *each* child, we can store a link to the *first* child and calculate the offset. 
 If an octree is not sparse, a non-leaf node must have 8 children. So finding the nth child is trivial. For example, if you wanted to find the 3rd child and the first child has an index of 82, you would add an offset of 2 to get the final index 84. This becomes a little more complex with an SVO, as a node is not guaranteed to have 8 children. 
 
-One possible solution, as used in [[sources#^ooc-svo-construction-src|the implementation of out-of-core construction of sparse voxel octrees]], is to store an index offset for each child. So, for every node you would store each of the 8 potential children's offset from the first child. If the child is empty (and therefore not stored), you would have a special value (say, the 8-bit limit) that indicates that the child is invalid.
+One possible solution, as used in [[Sources#^ooc-svo-construction-src|the implementation of out-of-core construction of sparse voxel octrees]], is to store an index offset for each child. So, for every node you would store each of the 8 potential children's offset from the first child. If the child is empty (and therefore not stored), you would have a special value (say, the 8-bit limit) that indicates that the child is invalid.
 
-The solution I ended up choosing was similar to the one proposed in [[sources#^efficient-svos|reference 3]]. Each node, instead of containing a list of offset indices, contains an 8-bit mask, where each bit represents if the child is full (1), or empty (0). From here, it is somewhat trivial[^8bitalgo] to find any given child.
+The solution I ended up choosing was similar to the one proposed in [[Sources#^efficient-svos|reference 3]]. Each node, instead of containing a list of offset indices, contains an 8-bit mask, where each bit represents if the child is full (1), or empty (0). From here, it is somewhat trivial[^8bitalgo] to find any given child. ^8bit
 
 [^8bitalgo]: TODO: write a link or text here about the algorithm
 

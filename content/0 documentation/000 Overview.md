@@ -6,7 +6,7 @@ This documentation is written with a few intentions in mind. it contains multipl
 ![[0 documentation/design/000 Overview#^description]]
 
 ### [[0 documentation/developer reference/000 Overview|Developer Reference]]
-![[0 documentation/developer reference/000 Overview]]
+![[0 documentation/developer reference/000 Overview#^description]]
 
 ---
 ## Whats Complete at the Moment?

@@ -39,7 +39,7 @@ A voxel representation needs to be made from the input geometry. This resulting 
 Whatever method is used to generate the voxelization of the scene (see [[methods of representing obstacles in 3D]]), the final path should be optimal relative to the world. 
 This means that if a voxel octree, like in this crate, is used to represent traverse-able space, the path output will be relative to the octree. See [[01 Sparse Voxel Octrees - an Introduction#sub-optimal pathing|suboptimal pathing]] for a more detailed explanation
 ## The *Applicable* Available Tools
-When researching 3D navigation, I came across two solutions. the faster, "state-of-the-art" *3D-jump-point-system*, and the slightly more researched *sparse voxel octrees*.
+When researching 3D navigation, I came across two solutions. the faster, "state-of-the-art" *3D-jump-point-system*, and the slightly more well-researched *sparse voxel octrees*.
 ### 3D Jump Point System (JPS)
 the jump point system[^1] 
 

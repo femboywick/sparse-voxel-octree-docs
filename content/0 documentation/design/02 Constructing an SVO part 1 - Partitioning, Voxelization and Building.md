@@ -10,6 +10,6 @@ A [[01 Sparse Voxel Octrees - an Introduction#whats a voxel grid?|voxel grid]] i
 For an SVO, a voxel grid is constructed at the resolution of the lowest layer of the octree. From this intermediary, we can build a sparse octree from the bottom up.
 
 ## Morton Order
-## input
+## Input
 - [ ] TODO: write about triangle meshes, and getting them from godot
 collision meshes, which work faster with convex shapes, can be made from many simple convex representations of a potentially concave whole.

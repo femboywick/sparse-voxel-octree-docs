@@ -1,1 +1,1 @@
-write about https://diataxis.fr/how-to-use-diataxis/ and make this file a reference for me.
+Write about https://diataxis.fr/how-to-use-diataxis/ and make this file a reference for me.
