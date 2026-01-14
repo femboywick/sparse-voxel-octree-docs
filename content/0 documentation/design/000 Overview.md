@@ -4,9 +4,7 @@ tags:
 ---
 Designing this library was a task that involved many sub-goals along the way. The purpose of this chapter is to document some of the problems I faced and how they were solved.
 
-This chapter contains information about the core theory behind the library. Whilst it may not be as easily applicable as other parts of this documentation, if you would like to contribute, or even make your own library, this is the place to start.
-
-^description
+This chapter contains information about the core theory behind the library. Whilst it may not be as easily applicable as other parts of this documentation, if you would like to contribute, or even make your own library, this is the place to start. ^description
 
 ---
 
