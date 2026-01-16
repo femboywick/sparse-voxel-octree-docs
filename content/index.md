@@ -1,6 +1,6 @@
 ---
 title: Welcome to Quartz
 ---
-welcome to `godot-svo` (placeholder name).
+Welcome to `godot-svo` (placeholder name).
 
-the initial goal of this library was to be able to navigate an agent through a 3D scene, where there may not be a ground.
+There are two sections available, the [[0 documentation/00 Overview|documentation]] and the development. The documentation is probably what you're looking for. The development folder contains developer logs and changelogs. 

@@ -1,5 +1,6 @@
 ## The GitHub Issue that Started It All
-in my initial search for how to do 3D navigation in godot, I found [this](https://github.com/godotengine/godot-proposals/issues/7504) issue. in it, @smix8 pointed out reference 1. From the chapter, I found a few papers, which eventually lead onto a myriad of other papers. The ones I've mainly been referencing whilst writing my code are listed below
+
+In my initial search for how to do 3D navigation in godot, I found [this](https://github.com/godotengine/godot-proposals/issues/7504) issue. In it, @smix8 pointed out that navmeshes were not up to the task, and linked reference 1. From the chapter, I found a few papers, which eventually lead onto a myriad of other papers. The ones I've mainly been referencing whilst writing my code are listed below ^git-issue
 
 TODO:
 - [ ] list all papers

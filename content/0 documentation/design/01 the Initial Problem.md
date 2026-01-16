@@ -29,7 +29,9 @@ This makes it unsuitable (as I understand it) for [[#full 3D navigation/path-fin
 The problem described above can be written formally into specifications for what we want out of it. the [[#general]] section deals with the main outcomes that we want to achieve, whilst the [[#specific]] section details some problems along the way.
 ### General
 #### Full 3D Navigation/Path-Finding
-The agent should be able to navigate through space around obstacles. This means that, unlike in a navmesh which is focused on *surfaces*, we must focus on *volumes*. The result is that in, for instance, an asteroid field: the agent would be able to path-find through asteroids.  ^volumetric-navigation
+The agent should be able to navigate through space around obstacles. This means that, unlike in a navmesh which is focused on *surfaces*, we must focus on *volumes*[^git]. The result is that in, for instance, an asteroid field: the agent would be able to path-find through asteroids. ^volumetric-navigation
+
+[^git]: Please see [[20 Sources#^git-issue|the github issue that started me on this journey]]. 
 #### Untethered from the Ground
 There should not have to be a ground for the enemy to be relative to, as in a navmesh.
 ### Specific

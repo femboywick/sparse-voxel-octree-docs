@@ -5,7 +5,8 @@ tags:
 ---
 This article serves as an introduction to sparse voxel octrees, the main data structure used. Voxel octrees are an efficient way to store large voxelized scenes, which we implement path-finding through. ^description
 ### Why Voxels?
-in a navmesh, all the tiles are convex. This makes it quite convenient to path-find through, as:
+
+In a navmesh, all the tiles are convex. This makes it quite convenient to path-find through, as:
 > Two points in the same \[convex\] tile can always be connected by a straight line that does not intersect any obstacles [^ref4]
 
 [^ref4]: [[20 Sources#^efficient-pathfinding-thesis|reference 4 thesis: page 16]]
@@ -74,7 +75,8 @@ The solution I ended up choosing was similar to the one proposed in [[20 Sources
 [^8bitalgo]: TODO: write a link or text here about the algorithm
 
 So, finally, for our node we have: a position, a first child link, and a bit-mask for storing the valid children.
-
+### Morton Order
+To construct an SVO, (citation) shows that it is efficient to store it in [[10 Morton Coding|Morton order]]. 
 ## Construction
 
 ## Limitations

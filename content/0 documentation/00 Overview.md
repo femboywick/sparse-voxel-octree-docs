@@ -1,5 +1,8 @@
 This documentation is written with a few intentions in mind. it contains multiple sections, each with a description written below.
 
+A brief overview is shown in [[01 Basic Information (Abstract and Glossary)]]
+![[01 Basic Information (Abstract and Glossary)#^description]]
+
 ---
 ## Before Anything Else, a Personal Request
 ![[80 A Personal Request#^description]]
